@@ -1,4 +1,5 @@
+GCompare.xcodeproj/project.xcworkspace/xcuserdata/*
+GCompare.xcodeproj/xcuserdata/*
 
-GCompare.xcodeproj/project.xcworkspace/xcuserdata/R0CKSTAR.xcuserdatad/UserInterfaceState.xcuserstate
-
-GCompare.xcodeproj/xcuserdata/R0CKSTAR.xcuserdatad/xcschemes/xcschememanagement.plist
+Podfile.lock
+Pods/*
