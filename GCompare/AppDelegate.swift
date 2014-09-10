@@ -16,11 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
+        OCTClient.setClientID("0cf420e39db6bf7de2dd", clientSecret: "f86cbff8ba7cb0ecd09398edcc74ccc3eccd6b3d")
         return true
     }
     
     func application(application: UIApplication, handleOpenURL url: NSURL) -> Bool {
         if url.host == "oauth" {
+            OCTClient.completeSignInWithCallbackURL(url)
             return true
         } else {
             return false

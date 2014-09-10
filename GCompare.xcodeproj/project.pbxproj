@@ -95,7 +95,6 @@
 				D02718F319C0384C00ACCD01 /* Main.storyboard */,
 				D02718F619C0384C00ACCD01 /* Images.xcassets */,
 				D02718ED19C0384C00ACCD01 /* Supporting Files */,
-				D049223219C050B10028AAEA /* GCompare-Bridging-Header.h */,
 			);
 			path = GCompare;
 			sourceTree = "<group>";
@@ -103,6 +102,7 @@
 		D02718ED19C0384C00ACCD01 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D049223219C050B10028AAEA /* GCompare-Bridging-Header.h */,
 				D02718EE19C0384C00ACCD01 /* Info.plist */,
 			);
 			name = "Supporting Files";
