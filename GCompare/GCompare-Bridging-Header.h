@@ -2,8 +2,8 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
-#import <OCTClient.h>
-#import <OCTServer.h>
+#import <OctoKit.h>
 
-#import <RACDisposable.h>
-#import <RACSignal.h>
+#import <ReactiveCocoa.h>
+
+#import <SSKeychain.h>

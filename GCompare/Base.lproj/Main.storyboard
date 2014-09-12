@@ -30,7 +30,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="signIn" destination="qA9-3D-eew" id="qWP-VJ-wMU"/>
+                        <outlet property="signInButton" destination="qA9-3D-eew" id="xOh-Iu-U9B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
