@@ -9,6 +9,60 @@
 import UIKit
 import Security
 
+extension NSDate {
+    private class func dayInSeconds() -> Double { return 86400 }
+    
+    func day() -> Int { return self.components().day }
+    
+    // MARK: Components
+    private class func componentFlags() -> NSCalendarUnit { return .YearCalendarUnit | .MonthCalendarUnit | .DayCalendarUnit | .WeekCalendarUnit | .HourCalendarUnit | .MinuteCalendarUnit | .SecondCalendarUnit | .WeekdayCalendarUnit | .WeekdayOrdinalCalendarUnit | .CalendarUnitWeekOfYear }
+    
+    private class func components(#fromDate: NSDate) -> NSDateComponents! {
+        return NSCalendar.currentCalendar().components(NSDate.componentFlags(), fromDate: fromDate)
+    }
+    
+    private func components() -> NSDateComponents  {
+        return NSDate.components(fromDate: self)!
+    }
+    
+    // MARK: Decomposing Dates
+    
+    func firstDayOfWeek () -> Int {
+        let distanceToStartOfWeek = NSDate.dayInSeconds() * Double(self.components().weekday - 1)
+        let interval: NSTimeInterval = self.timeIntervalSinceReferenceDate - distanceToStartOfWeek
+        return NSDate(timeIntervalSinceReferenceDate: interval).day()
+    }
+    
+    func lastDayOfWeek () -> Int {
+        let distanceToStartOfWeek = NSDate.dayInSeconds() * Double(self.components().weekday - 1)
+        let distanceToEndOfWeek = NSDate.dayInSeconds() * Double(7)
+        let interval: NSTimeInterval = self.timeIntervalSinceReferenceDate - distanceToStartOfWeek + distanceToEndOfWeek
+        return NSDate(timeIntervalSinceReferenceDate: interval).day()
+    }
+    
+    func dateAtStartOfWeek() -> NSDate
+    {
+        let flags :NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .WeekCalendarUnit | .WeekdayCalendarUnit
+        var components = NSCalendar.currentCalendar().components(flags, fromDate: self)
+        components.weekday = 1 // Sunday
+        components.hour = 0
+        components.minute = 0
+        components.second = 0
+        return NSCalendar.currentCalendar().dateFromComponents(components)!
+    }
+    
+    func dateAtEndOfWeek() -> NSDate
+    {
+        let flags :NSCalendarUnit = .YearCalendarUnit | .MonthCalendarUnit | .WeekCalendarUnit | .WeekdayCalendarUnit
+        var components = NSCalendar.currentCalendar().components(flags, fromDate: self)
+        components.weekday = 7 // Sunday
+        components.hour = 0
+        components.minute = 0
+        components.second = 0
+        return NSCalendar.currentCalendar().dateFromComponents(components)!
+    }
+}
+
 class ViewController: UIViewController {
     @IBOutlet var signInButton: UIButton!
     
@@ -93,6 +147,14 @@ class ViewController: UIViewController {
         self.signInButton.rac_signalForControlEvents(UIControlEvents.TouchUpInside).subscribeNext { (sender: AnyObject!) -> Void in
             self.signIn()
         }
+        let a = NSDate().firstDayOfWeek()
+        let b = NSDate().lastDayOfWeek()
+        let c = NSDate().dateAtStartOfWeek()
+        let d = NSDate().dateAtEndOfWeek()
+        println(a)
+        println(b)
+        println(c)
+        println(d)
     }
     
     override func didReceiveMemoryWarning() {
