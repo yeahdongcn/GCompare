@@ -12,11 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    let CLIENT_ID = "0cf420e39db6bf7de2dd"
+    let CLIENT_SECRET = "f86cbff8ba7cb0ecd09398edcc74ccc3eccd6b3d"
     
     
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         // Override point for customization after application launch.
-        OCTClient.setClientID("0cf420e39db6bf7de2dd", clientSecret: "f86cbff8ba7cb0ecd09398edcc74ccc3eccd6b3d")
+        OCTClient.setClientID(CLIENT_ID, clientSecret: CLIENT_SECRET)
         return true
     }
     
@@ -50,7 +52,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication!) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-    
 }
 

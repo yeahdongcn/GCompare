@@ -13,6 +13,8 @@
 		D02718F519C0384C00ACCD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02718F319C0384C00ACCD01 /* Main.storyboard */; };
 		D02718F719C0384C00ACCD01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D02718F619C0384C00ACCD01 /* Images.xcassets */; };
 		D027190319C0384C00ACCD01 /* GCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D027190219C0384C00ACCD01 /* GCompareTests.swift */; };
+		D0A2734319C5BE7F00EFFC00 /* OrganizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2734219C5BE7F00EFFC00 /* OrganizationsViewController.swift */; };
+		D0A2734519C5C9A700EFFC00 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2734419C5C9A700EFFC00 /* Core.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		D027190119C0384C00ACCD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D027190219C0384C00ACCD01 /* GCompareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCompareTests.swift; sourceTree = "<group>"; };
 		D049223219C050B10028AAEA /* GCompare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCompare-Bridging-Header.h"; sourceTree = "<group>"; };
+		D0A2734219C5BE7F00EFFC00 /* OrganizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsViewController.swift; sourceTree = "<group>"; };
+		D0A2734419C5C9A700EFFC00 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				D02718F319C0384C00ACCD01 /* Main.storyboard */,
 				D02718F619C0384C00ACCD01 /* Images.xcassets */,
 				D02718ED19C0384C00ACCD01 /* Supporting Files */,
+				D0A2734219C5BE7F00EFFC00 /* OrganizationsViewController.swift */,
+				D0A2734419C5C9A700EFFC00 /* Core.swift */,
 			);
 			path = GCompare;
 			sourceTree = "<group>";
@@ -261,6 +267,8 @@
 			files = (
 				D02718F219C0384C00ACCD01 /* ViewController.swift in Sources */,
 				D02718F019C0384C00ACCD01 /* AppDelegate.swift in Sources */,
+				D0A2734519C5C9A700EFFC00 /* Core.swift in Sources */,
+				D0A2734319C5BE7F00EFFC00 /* OrganizationsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
