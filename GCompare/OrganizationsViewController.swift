@@ -23,6 +23,7 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.registerNib(UINib(nibName: "OrganizationCell", bundle: nil), forCellReuseIdentifier: "OrganizationCell")
         tableView.tableHeaderView = nil
     }
     
@@ -83,9 +84,10 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("OrganizationCell") as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("OrganizationCell") as OrganizationCell
         let organization = organizations!.objectAtIndex(indexPath.row) as OCTOrganization
-        cell.textLabel!.text = organization.name
+        cell.titleLabel!.text = organization.name
+        cell.iconView!.setImageWithURL(organization.avatarURL, placeholderImage: UIImage())
         return cell
     }
     

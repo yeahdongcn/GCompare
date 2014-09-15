@@ -15,6 +15,8 @@
 		D027190319C0384C00ACCD01 /* GCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D027190219C0384C00ACCD01 /* GCompareTests.swift */; };
 		D0A2734319C5BE7F00EFFC00 /* OrganizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2734219C5BE7F00EFFC00 /* OrganizationsViewController.swift */; };
 		D0A2734519C5C9A700EFFC00 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2734419C5C9A700EFFC00 /* Core.swift */; };
+		D0A2734719C6CFDC00EFFC00 /* OrganizationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A2734619C6CFDC00EFFC00 /* OrganizationCell.xib */; };
+		D0A2734919C6D11B00EFFC00 /* OrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2734819C6D11B00EFFC00 /* OrganizationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		D049223219C050B10028AAEA /* GCompare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCompare-Bridging-Header.h"; sourceTree = "<group>"; };
 		D0A2734219C5BE7F00EFFC00 /* OrganizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsViewController.swift; sourceTree = "<group>"; };
 		D0A2734419C5C9A700EFFC00 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		D0A2734619C6CFDC00EFFC00 /* OrganizationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrganizationCell.xib; sourceTree = "<group>"; };
+		D0A2734819C6D11B00EFFC00 /* OrganizationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				D02718ED19C0384C00ACCD01 /* Supporting Files */,
 				D0A2734219C5BE7F00EFFC00 /* OrganizationsViewController.swift */,
 				D0A2734419C5C9A700EFFC00 /* Core.swift */,
+				D0A2734619C6CFDC00EFFC00 /* OrganizationCell.xib */,
+				D0A2734819C6D11B00EFFC00 /* OrganizationCell.swift */,
 			);
 			path = GCompare;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A2734719C6CFDC00EFFC00 /* OrganizationCell.xib in Resources */,
 				D02718F519C0384C00ACCD01 /* Main.storyboard in Resources */,
 				D02718F719C0384C00ACCD01 /* Images.xcassets in Resources */,
 			);
@@ -265,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0A2734919C6D11B00EFFC00 /* OrganizationCell.swift in Sources */,
 				D02718F219C0384C00ACCD01 /* ViewController.swift in Sources */,
 				D02718F019C0384C00ACCD01 /* AppDelegate.swift in Sources */,
 				D0A2734519C5C9A700EFFC00 /* Core.swift in Sources */,
