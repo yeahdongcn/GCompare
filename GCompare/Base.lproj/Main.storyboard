@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A343f" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ibq-fK-sNl">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ibq-fK-sNl">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="z1Y-9x-cIv">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="cYF-9V-9cX">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="90"/>
@@ -62,7 +62,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="z1Y-9x-cIv" secondAttribute="trailing" id="7fY-fL-tP4"/>
-                            <constraint firstItem="z1Y-9x-cIv" firstAttribute="top" secondItem="iaf-So-ByD" secondAttribute="top" id="XqI-II-YLK"/>
+                            <constraint firstItem="z1Y-9x-cIv" firstAttribute="top" secondItem="iaf-So-ByD" secondAttribute="top" constant="20" symbolic="YES" id="XqI-II-YLK"/>
                             <constraint firstItem="z1Y-9x-cIv" firstAttribute="leading" secondItem="iaf-So-ByD" secondAttribute="leading" id="e1S-be-1fc"/>
                             <constraint firstAttribute="bottom" secondItem="z1Y-9x-cIv" secondAttribute="bottom" id="t75-O5-MKr"/>
                         </constraints>

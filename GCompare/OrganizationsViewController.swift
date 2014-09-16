@@ -91,6 +91,10 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
         return cell
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100.0
+    }
+    
     // MARK: UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
