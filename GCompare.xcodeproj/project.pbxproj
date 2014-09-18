@@ -13,10 +13,12 @@
 		D02718F519C0384C00ACCD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02718F319C0384C00ACCD01 /* Main.storyboard */; };
 		D02718F719C0384C00ACCD01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D02718F619C0384C00ACCD01 /* Images.xcassets */; };
 		D027190319C0384C00ACCD01 /* GCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D027190219C0384C00ACCD01 /* GCompareTests.swift */; };
+		D04E283619C9160D00CC3DFE /* OrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E283419C9160D00CC3DFE /* OrganizationCell.swift */; };
+		D04E283719C9160D00CC3DFE /* OrganizationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D04E283519C9160D00CC3DFE /* OrganizationCell.xib */; };
+		D04E283C19C93D6700CC3DFE /* OCTExtendedUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D04E283B19C93D6700CC3DFE /* OCTExtendedUser.m */; };
+		D04E284219C9551D00CC3DFE /* OCTClient+ExtendedUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D04E284119C9551D00CC3DFE /* OCTClient+ExtendedUser.m */; };
 		D0A2734319C5BE7F00EFFC00 /* OrganizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2734219C5BE7F00EFFC00 /* OrganizationsViewController.swift */; };
 		D0A2734519C5C9A700EFFC00 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2734419C5C9A700EFFC00 /* Core.swift */; };
-		D0A2734719C6CFDC00EFFC00 /* OrganizationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0A2734619C6CFDC00EFFC00 /* OrganizationCell.xib */; };
-		D0A2734919C6D11B00EFFC00 /* OrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2734819C6D11B00EFFC00 /* OrganizationCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,10 +44,14 @@
 		D027190119C0384C00ACCD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D027190219C0384C00ACCD01 /* GCompareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCompareTests.swift; sourceTree = "<group>"; };
 		D049223219C050B10028AAEA /* GCompare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCompare-Bridging-Header.h"; sourceTree = "<group>"; };
+		D04E283419C9160D00CC3DFE /* OrganizationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
+		D04E283519C9160D00CC3DFE /* OrganizationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrganizationCell.xib; sourceTree = "<group>"; };
+		D04E283A19C93D6700CC3DFE /* OCTExtendedUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCTExtendedUser.h; sourceTree = "<group>"; };
+		D04E283B19C93D6700CC3DFE /* OCTExtendedUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OCTExtendedUser.m; sourceTree = "<group>"; };
+		D04E284019C9551D00CC3DFE /* OCTClient+ExtendedUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "OCTClient+ExtendedUser.h"; sourceTree = "<group>"; };
+		D04E284119C9551D00CC3DFE /* OCTClient+ExtendedUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+ExtendedUser.m"; sourceTree = "<group>"; };
 		D0A2734219C5BE7F00EFFC00 /* OrganizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsViewController.swift; sourceTree = "<group>"; };
 		D0A2734419C5C9A700EFFC00 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
-		D0A2734619C6CFDC00EFFC00 /* OrganizationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrganizationCell.xib; sourceTree = "<group>"; };
-		D0A2734819C6D11B00EFFC00 /* OrganizationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,8 @@
 		D02718EC19C0384C00ACCD01 /* GCompare */ = {
 			isa = PBXGroup;
 			children = (
+				D04E283419C9160D00CC3DFE /* OrganizationCell.swift */,
+				D04E283519C9160D00CC3DFE /* OrganizationCell.xib */,
 				D02718EF19C0384C00ACCD01 /* AppDelegate.swift */,
 				D02718F119C0384C00ACCD01 /* ViewController.swift */,
 				D02718F319C0384C00ACCD01 /* Main.storyboard */,
@@ -105,8 +113,11 @@
 				D02718ED19C0384C00ACCD01 /* Supporting Files */,
 				D0A2734219C5BE7F00EFFC00 /* OrganizationsViewController.swift */,
 				D0A2734419C5C9A700EFFC00 /* Core.swift */,
-				D0A2734619C6CFDC00EFFC00 /* OrganizationCell.xib */,
-				D0A2734819C6D11B00EFFC00 /* OrganizationCell.swift */,
+				D04E283A19C93D6700CC3DFE /* OCTExtendedUser.h */,
+				D04E283B19C93D6700CC3DFE /* OCTExtendedUser.m */,
+				D04E284019C9551D00CC3DFE /* OCTClient+ExtendedUser.h */,
+				D04E284119C9551D00CC3DFE /* OCTClient+ExtendedUser.m */,
+				D049223219C050B10028AAEA /* GCompare-Bridging-Header.h */,
 			);
 			path = GCompare;
 			sourceTree = "<group>";
@@ -114,7 +125,6 @@
 		D02718ED19C0384C00ACCD01 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D049223219C050B10028AAEA /* GCompare-Bridging-Header.h */,
 				D02718EE19C0384C00ACCD01 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -219,7 +229,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A2734719C6CFDC00EFFC00 /* OrganizationCell.xib in Resources */,
+				D04E283719C9160D00CC3DFE /* OrganizationCell.xib in Resources */,
 				D02718F519C0384C00ACCD01 /* Main.storyboard in Resources */,
 				D02718F719C0384C00ACCD01 /* Images.xcassets in Resources */,
 			);
@@ -272,11 +282,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0A2734919C6D11B00EFFC00 /* OrganizationCell.swift in Sources */,
+				D04E283619C9160D00CC3DFE /* OrganizationCell.swift in Sources */,
+				D04E283C19C93D6700CC3DFE /* OCTExtendedUser.m in Sources */,
 				D02718F219C0384C00ACCD01 /* ViewController.swift in Sources */,
 				D02718F019C0384C00ACCD01 /* AppDelegate.swift in Sources */,
 				D0A2734519C5C9A700EFFC00 /* Core.swift in Sources */,
 				D0A2734319C5BE7F00EFFC00 /* OrganizationsViewController.swift in Sources */,
+				D04E284219C9551D00CC3DFE /* OCTClient+ExtendedUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

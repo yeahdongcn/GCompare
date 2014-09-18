@@ -10,9 +10,6 @@ import UIKit
 
 class OrganizationCell: UITableViewCell {
     
-    @IBOutlet var iconView: UIImageView!
-    @IBOutlet var titleLabel: UILabel!
-
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

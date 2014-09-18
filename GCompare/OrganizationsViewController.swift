@@ -8,7 +8,7 @@
 
 import UIKit
 
-class OrganizationsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class OrganizationsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet var tableView: UITableView!
     @IBOutlet var tableHeaderView: UIView!
@@ -16,12 +16,13 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     @IBOutlet var loginLabel: UILabel!
     @IBOutlet var avatarView: UIImageView!
     
-    var organizations: NSArray?
-    
     // MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        avatarView.layer.cornerRadius = avatarView.bounds.size.width / 2.0
+        avatarView.clipsToBounds = true
         
         tableView.registerNib(UINib(nibName: "OrganizationCell", bundle: nil), forCellReuseIdentifier: "OrganizationCell")
         tableView.tableHeaderView = nil
@@ -32,39 +33,51 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
         
         Core.Shared.signIn { (object: AnyObject?) -> Void in
             if (object != nil) {
-                if (object!.isKindOfClass(OCTClient)) {
+                if (object!.isKindOfClass(OCTClient)) { // Completed handling
                     let client = object as OCTClient
-                    client.fetchUserInfo().collect().subscribeNext({ (x: AnyObject!) -> Void in
-                        let user = (x as NSArray).firstObject as OCTUser?
-                        if (user != nil) {
+                    
+                    // Starred Repositories
+                    client.fetchUserStarredRepositories().collect().subscribeNext({ (x: AnyObject!) -> Void in
+                        Core.Shared.starredRepositories = (x as NSArray)
+                        }, error: { (error: NSError!) -> Void in
+                        }, completed: { () -> Void in
+                    })
+                    
+                    // User Info
+                    client.fetchExtendedUserInfo().collect().subscribeNext({ (x: AnyObject!) -> Void in
+                        Core.Shared.user = (x as NSArray).firstObject as OCTExtendedUser?
+                        if (Core.Shared.user != nil) {
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                self.nameLabel.text = user!.name
-                                self.loginLabel.text = user!.login
-                                self.avatarView.setImageWithURL(user!.avatarURL)
+                                println(Core.Shared.user!.followers)
+                                self.nameLabel.text = Core.Shared.user!.name
+                                self.loginLabel.text = Core.Shared.user!.login
+                                self.avatarView.setImageWithURL(Core.Shared.user!.avatarURL)
                                 self.tableView.beginUpdates()
                                 self.tableView.tableHeaderView = self.tableHeaderView
                                 self.tableView.endUpdates()
                             })
                         }
-                    }, error: { (error: NSError!) -> Void in
-                        
-                    }, completed: { () -> Void in
-                        println("fetchUserInfo completed")
+                        }, error: { (error: NSError!) -> Void in
+                            
+                        }, completed: { () -> Void in
+                            
                     })
                     
-                    client.fetchUserOrganizations().collect().subscribeNext({ (object: AnyObject!) -> Void in
-                        self.organizations = object as NSArray?
+                    client.fetchUserOrganizations().collect().subscribeNext({ (x: AnyObject!) -> Void in
+                        Core.Shared.organizations = (x as NSArray)
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
                         })
                         }, error: { (error: NSError!) -> Void in
                             
                         }, completed: { () -> Void in
-                            println("fetchUserOrganizations completed")
+                            
                     })
-                } else if (object!.isKindOfClass(NSError)) {
+                } else if (object!.isKindOfClass(NSError)) { // Error handling
                     
                 }
+            } else { // Error handling
+                
             }
         }
     }
@@ -76,8 +89,8 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (organizations != nil) {
-            return organizations!.count
+        if (Core.Shared.organizations != nil) {
+            return Core.Shared.organizations!.count
         } else {
             return 0;
         }
@@ -85,14 +98,14 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("OrganizationCell") as OrganizationCell
-        let organization = organizations!.objectAtIndex(indexPath.row) as OCTOrganization
-        cell.titleLabel!.text = organization.name
-        cell.iconView!.setImageWithURL(organization.avatarURL, placeholderImage: UIImage())
+        let organization = Core.Shared.organizations!.objectAtIndex(indexPath.row) as OCTOrganization
+        cell.textLabel?.text = organization.name
+        cell.imageView?.setImageWithURL(organization.avatarURL, placeholderImage: UIImage())
         return cell
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100.0
+        return 44.0
     }
     
     // MARK: UITableViewDelegate
@@ -100,5 +113,16 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+    }
+    
+    // MARK: UICollectionViewDataSource
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 6
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StatisticCell", forIndexPath: indexPath) as UICollectionViewCell
+        return cell
     }
 }

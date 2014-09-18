@@ -16,9 +16,10 @@ public class Core: NSObject {
     return SharedCore
     }
     
-    let SERVICE_NAME = "GCompare"
-    let LOGIN_KEY = "RawLogin"
     public var client: OCTClient!
+    public var user: OCTExtendedUser?
+    public var organizations: NSArray?
+    public var starredRepositories: NSArray?
     
     func signIn(handler: ((AnyObject?) -> Void)?) {
         let accounts = SSKeychain.accountsForService(SERVICE_NAME)
@@ -56,4 +57,7 @@ public class Core: NSObject {
             })
         }
     }
+    
+    let SERVICE_NAME = "GCompare"
+    let LOGIN_KEY = "RawLogin"
 }
