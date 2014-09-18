@@ -19,6 +19,7 @@
 		D04E284219C9551D00CC3DFE /* OCTClient+ExtendedUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D04E284119C9551D00CC3DFE /* OCTClient+ExtendedUser.m */; };
 		D0A2734319C5BE7F00EFFC00 /* OrganizationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2734219C5BE7F00EFFC00 /* OrganizationsViewController.swift */; };
 		D0A2734519C5C9A700EFFC00 /* Core.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A2734419C5C9A700EFFC00 /* Core.swift */; };
+		D0FA3A9419CAD7E30053A75F /* StatisticCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FA3A9319CAD7E30053A75F /* StatisticCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		D04E284119C9551D00CC3DFE /* OCTClient+ExtendedUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "OCTClient+ExtendedUser.m"; sourceTree = "<group>"; };
 		D0A2734219C5BE7F00EFFC00 /* OrganizationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationsViewController.swift; sourceTree = "<group>"; };
 		D0A2734419C5C9A700EFFC00 /* Core.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Core.swift; sourceTree = "<group>"; };
+		D0FA3A9319CAD7E30053A75F /* StatisticCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatisticCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				D04E284019C9551D00CC3DFE /* OCTClient+ExtendedUser.h */,
 				D04E284119C9551D00CC3DFE /* OCTClient+ExtendedUser.m */,
 				D049223219C050B10028AAEA /* GCompare-Bridging-Header.h */,
+				D0FA3A9319CAD7E30053A75F /* StatisticCell.swift */,
 			);
 			path = GCompare;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				D02718F019C0384C00ACCD01 /* AppDelegate.swift in Sources */,
 				D0A2734519C5C9A700EFFC00 /* Core.swift in Sources */,
 				D0A2734319C5BE7F00EFFC00 /* OrganizationsViewController.swift in Sources */,
+				D0FA3A9419CAD7E30053A75F /* StatisticCell.swift in Sources */,
 				D04E284219C9551D00CC3DFE /* OCTClient+ExtendedUser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

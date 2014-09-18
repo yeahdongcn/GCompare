@@ -55,7 +55,7 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StatisticCell" id="ell-g4-rfH">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="StatisticCell" id="ell-g4-rfH" customClass="StatisticCell" customModule="GCompare" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -100,6 +100,12 @@
                                                         <constraint firstItem="vy4-oU-Q1F" firstAttribute="leading" secondItem="ell-g4-rfH" secondAttribute="leading" constant="5" id="uWz-G1-by6"/>
                                                         <constraint firstItem="vy4-oU-Q1F" firstAttribute="top" secondItem="ell-g4-rfH" secondAttribute="top" constant="5" id="yjH-wg-Qzp"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <outlet property="activityIndicatorView" destination="lFM-Wg-cKE" id="Lh4-MC-Etn"/>
+                                                        <outlet property="bgView" destination="vy4-oU-Q1F" id="kc4-fD-NzG"/>
+                                                        <outlet property="keyLabel" destination="Ii1-is-c2X" id="lYX-Ms-DKR"/>
+                                                        <outlet property="valueLabel" destination="cG3-qw-Fxt" id="oMe-mt-vyn"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                             <connections>
