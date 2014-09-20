@@ -13,6 +13,9 @@
 		D02718F519C0384C00ACCD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02718F319C0384C00ACCD01 /* Main.storyboard */; };
 		D02718F719C0384C00ACCD01 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D02718F619C0384C00ACCD01 /* Images.xcassets */; };
 		D027190319C0384C00ACCD01 /* GCompareTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D027190219C0384C00ACCD01 /* GCompareTests.swift */; };
+		D03B456019CBDE63009E1584 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B455F19CBDE63009E1584 /* PeopleViewController.swift */; };
+		D03B456219CBDF1C009E1584 /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03B456119CBDF1C009E1584 /* PeopleCell.swift */; };
+		D03B456419CBDF2C009E1584 /* PeopleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03B456319CBDF2C009E1584 /* PeopleCell.xib */; };
 		D04E283619C9160D00CC3DFE /* OrganizationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04E283419C9160D00CC3DFE /* OrganizationCell.swift */; };
 		D04E283719C9160D00CC3DFE /* OrganizationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D04E283519C9160D00CC3DFE /* OrganizationCell.xib */; };
 		D04E283C19C93D6700CC3DFE /* OCTExtendedUser.m in Sources */ = {isa = PBXBuildFile; fileRef = D04E283B19C93D6700CC3DFE /* OCTExtendedUser.m */; };
@@ -44,6 +47,9 @@
 		D02718FC19C0384C00ACCD01 /* GCompareTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GCompareTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D027190119C0384C00ACCD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D027190219C0384C00ACCD01 /* GCompareTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCompareTests.swift; sourceTree = "<group>"; };
+		D03B455F19CBDE63009E1584 /* PeopleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
+		D03B456119CBDF1C009E1584 /* PeopleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
+		D03B456319CBDF2C009E1584 /* PeopleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PeopleCell.xib; sourceTree = "<group>"; };
 		D049223219C050B10028AAEA /* GCompare-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GCompare-Bridging-Header.h"; sourceTree = "<group>"; };
 		D04E283419C9160D00CC3DFE /* OrganizationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrganizationCell.swift; sourceTree = "<group>"; };
 		D04E283519C9160D00CC3DFE /* OrganizationCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrganizationCell.xib; sourceTree = "<group>"; };
@@ -121,6 +127,9 @@
 				D04E284119C9551D00CC3DFE /* OCTClient+ExtendedUser.m */,
 				D049223219C050B10028AAEA /* GCompare-Bridging-Header.h */,
 				D0FA3A9319CAD7E30053A75F /* StatisticCell.swift */,
+				D03B455F19CBDE63009E1584 /* PeopleViewController.swift */,
+				D03B456119CBDF1C009E1584 /* PeopleCell.swift */,
+				D03B456319CBDF2C009E1584 /* PeopleCell.xib */,
 			);
 			path = GCompare;
 			sourceTree = "<group>";
@@ -232,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03B456419CBDF2C009E1584 /* PeopleCell.xib in Resources */,
 				D04E283719C9160D00CC3DFE /* OrganizationCell.xib in Resources */,
 				D02718F519C0384C00ACCD01 /* Main.storyboard in Resources */,
 				D02718F719C0384C00ACCD01 /* Images.xcassets in Resources */,
@@ -287,9 +297,11 @@
 			files = (
 				D04E283619C9160D00CC3DFE /* OrganizationCell.swift in Sources */,
 				D04E283C19C93D6700CC3DFE /* OCTExtendedUser.m in Sources */,
+				D03B456219CBDF1C009E1584 /* PeopleCell.swift in Sources */,
 				D02718F219C0384C00ACCD01 /* ViewController.swift in Sources */,
 				D02718F019C0384C00ACCD01 /* AppDelegate.swift in Sources */,
 				D0A2734519C5C9A700EFFC00 /* Core.swift in Sources */,
+				D03B456019CBDE63009E1584 /* PeopleViewController.swift in Sources */,
 				D0A2734319C5BE7F00EFFC00 /* OrganizationsViewController.swift in Sources */,
 				D0FA3A9419CAD7E30053A75F /* StatisticCell.swift in Sources */,
 				D04E284219C9551D00CC3DFE /* OCTClient+ExtendedUser.m in Sources */,

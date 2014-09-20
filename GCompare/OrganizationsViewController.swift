@@ -105,13 +105,16 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 44.0
+        return 60.0
     }
     
     // MARK: UITableViewDelegate
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        Core.Shared.selectedOrganization = Core.Shared.organizations!.objectAtIndex(indexPath.row) as OCTOrganization
+        self.performSegueWithIdentifier("ShowTab", sender: self)
         
     }
     

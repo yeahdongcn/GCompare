@@ -20,6 +20,7 @@ public class Core: NSObject {
     public var user: OCTExtendedUser?
     public var organizations: NSArray?
     public var starredRepositories: NSArray?
+    public var selectedOrganization: OCTOrganization?
     
     func signIn(handler: ((AnyObject?) -> Void)?) {
         let accounts = SSKeychain.accountsForService(SERVICE_NAME)
