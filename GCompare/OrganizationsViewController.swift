@@ -31,27 +31,27 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        Core.Shared.signIn { (object: AnyObject?) -> Void in
+        SharedCore.signIn { (object: AnyObject?) -> Void in
             if (object != nil) {
                 if (object!.isKindOfClass(OCTClient)) { // Completed handling
                     let client = object as OCTClient
                     
                     // Starred Repositories
                     client.fetchUserStarredRepositories().collect().subscribeNext({ (x: AnyObject!) -> Void in
-                        Core.Shared.starredRepositories = (x as NSArray)
+                        SharedCore.starredRepositories = (x as NSArray)
                         }, error: { (error: NSError!) -> Void in
                         }, completed: { () -> Void in
                     })
                     
                     // User Info
                     client.fetchExtendedUserInfo().collect().subscribeNext({ (x: AnyObject!) -> Void in
-                        Core.Shared.user = (x as NSArray).firstObject as OCTExtendedUser?
-                        if (Core.Shared.user != nil) {
+                        SharedCore.user = (x as NSArray).firstObject as OCTExtendedUser?
+                        if (SharedCore.user != nil) {
                             dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                println(Core.Shared.user!.followers)
-                                self.nameLabel.text = Core.Shared.user!.name
-                                self.loginLabel.text = Core.Shared.user!.login
-                                self.avatarView.setImageWithURL(Core.Shared.user!.avatarURL)
+                                println(SharedCore.user!.followers)
+                                self.nameLabel.text = SharedCore.user!.name
+                                self.loginLabel.text = SharedCore.user!.login
+                                self.avatarView.setImageWithURL(SharedCore.user!.avatarURL)
                                 self.tableView.beginUpdates()
                                 self.tableView.tableHeaderView = self.tableHeaderView
                                 self.tableView.endUpdates()
@@ -64,7 +64,7 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
                     })
                     
                     client.fetchUserOrganizations().collect().subscribeNext({ (x: AnyObject!) -> Void in
-                        Core.Shared.organizations = (x as NSArray)
+                        SharedCore.organizations = (x as NSArray)
                         dispatch_async(dispatch_get_main_queue(), { () -> Void in
                             self.tableView.reloadSections(NSIndexSet(index: 0), withRowAnimation: UITableViewRowAnimation.Automatic)
                         })
@@ -89,8 +89,8 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     // MARK: UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (Core.Shared.organizations != nil) {
-            return Core.Shared.organizations!.count
+        if (SharedCore.organizations != nil) {
+            return SharedCore.organizations!.count
         } else {
             return 0;
         }
@@ -98,7 +98,7 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("OrganizationCell") as OrganizationCell
-        let organization = Core.Shared.organizations!.objectAtIndex(indexPath.row) as OCTOrganization
+        let organization = SharedCore.organizations!.objectAtIndex(indexPath.row) as OCTOrganization
         cell.textLabel?.text = organization.name
         cell.imageView?.setImageWithURL(organization.avatarURL, placeholderImage: UIImage())
         return cell
@@ -113,7 +113,7 @@ class OrganizationsViewController: UIViewController, UITableViewDataSource, UITa
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        Core.Shared.selectedOrganization = Core.Shared.organizations!.objectAtIndex(indexPath.row) as? OCTOrganization
+        SharedCore.selectedOrganization = SharedCore.organizations!.objectAtIndex(indexPath.row) as? OCTOrganization
         self.performSegueWithIdentifier("ShowTab", sender: self)
     }
     

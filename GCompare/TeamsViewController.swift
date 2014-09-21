@@ -18,11 +18,11 @@ class TeamsViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
         tableView.registerNib(UINib(nibName: "TeamCell", bundle: nil), forCellReuseIdentifier: "TeamCell")
         
-        if (Core.Shared.selectedOrganization != nil && Core.Shared.teams == nil) {
+        if (SharedCore.selectedOrganization != nil && SharedCore.teams == nil) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
-                Core.Shared.client.fetchTeamsForOrganization(Core.Shared.selectedOrganization).collect().subscribeNext({ (x: AnyObject!) -> Void in
+                SharedCore.client.fetchTeamsForOrganization(SharedCore.selectedOrganization).collect().subscribeNext({ (x: AnyObject!) -> Void in
                     let teams = x as NSArray
-                    Core.Shared.teams = teams
+                    SharedCore.teams = teams
                     dispatch_async(dispatch_get_main_queue(), { () -> Void in
                         self.tableView!.reloadData()
                     })
@@ -30,7 +30,7 @@ class TeamsViewController: UIViewController, UITableViewDataSource, UITableViewD
                 })
                 return
             })
-        } else if (Core.Shared.teams != nil) {
+        } else if (SharedCore.teams != nil) {
             
         }
     }
@@ -43,8 +43,8 @@ class TeamsViewController: UIViewController, UITableViewDataSource, UITableViewD
     // MARK: UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (Core.Shared.teams != nil) {
-            return Core.Shared.teams!.count
+        if (SharedCore.teams != nil) {
+            return SharedCore.teams!.count
         } else {
             return 0
         }
@@ -52,7 +52,7 @@ class TeamsViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TeamCell") as TeamCell
-        let team = Core.Shared.teams![indexPath.row] as OCTTeam
+        let team = SharedCore.teams![indexPath.row] as OCTTeam
         cell.textLabel!.text = team.name
         return cell
     }
