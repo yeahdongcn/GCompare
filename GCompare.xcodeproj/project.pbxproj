@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		AE614B8611464833A52644A6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 143EEB97098F43C8AEE909A9 /* libPods.a */; };
+		D024C14219CF0371000FBB9C /* TeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D024C14119CF0371000FBB9C /* TeamCell.xib */; };
+		D024C14419CF0387000FBB9C /* TeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D024C14319CF0387000FBB9C /* TeamCell.swift */; };
+		D024C14819CF03CD000FBB9C /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D024C14719CF03CD000FBB9C /* TeamsViewController.swift */; };
 		D02718F019C0384C00ACCD01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02718EF19C0384C00ACCD01 /* AppDelegate.swift */; };
 		D02718F219C0384C00ACCD01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02718F119C0384C00ACCD01 /* ViewController.swift */; };
 		D02718F519C0384C00ACCD01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02718F319C0384C00ACCD01 /* Main.storyboard */; };
@@ -38,6 +41,9 @@
 /* Begin PBXFileReference section */
 		143EEB97098F43C8AEE909A9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		A64FDF54F6E7474B87777618 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		D024C14119CF0371000FBB9C /* TeamCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeamCell.xib; sourceTree = "<group>"; };
+		D024C14319CF0387000FBB9C /* TeamCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamCell.swift; sourceTree = "<group>"; };
+		D024C14719CF03CD000FBB9C /* TeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		D02718EA19C0384C00ACCD01 /* GCompare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GCompare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D02718EE19C0384C00ACCD01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D02718EF19C0384C00ACCD01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +136,9 @@
 				D03B455F19CBDE63009E1584 /* PeopleViewController.swift */,
 				D03B456119CBDF1C009E1584 /* PeopleCell.swift */,
 				D03B456319CBDF2C009E1584 /* PeopleCell.xib */,
+				D024C14719CF03CD000FBB9C /* TeamsViewController.swift */,
+				D024C14319CF0387000FBB9C /* TeamCell.swift */,
+				D024C14119CF0371000FBB9C /* TeamCell.xib */,
 			);
 			path = GCompare;
 			sourceTree = "<group>";
@@ -242,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D03B456419CBDF2C009E1584 /* PeopleCell.xib in Resources */,
+				D024C14219CF0371000FBB9C /* TeamCell.xib in Resources */,
 				D04E283719C9160D00CC3DFE /* OrganizationCell.xib in Resources */,
 				D02718F519C0384C00ACCD01 /* Main.storyboard in Resources */,
 				D02718F719C0384C00ACCD01 /* Images.xcassets in Resources */,
@@ -296,9 +306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D04E283619C9160D00CC3DFE /* OrganizationCell.swift in Sources */,
+				D024C14819CF03CD000FBB9C /* TeamsViewController.swift in Sources */,
 				D04E283C19C93D6700CC3DFE /* OCTExtendedUser.m in Sources */,
 				D03B456219CBDF1C009E1584 /* PeopleCell.swift in Sources */,
 				D02718F219C0384C00ACCD01 /* ViewController.swift in Sources */,
+				D024C14419CF0387000FBB9C /* TeamCell.swift in Sources */,
 				D02718F019C0384C00ACCD01 /* AppDelegate.swift in Sources */,
 				D0A2734519C5C9A700EFFC00 /* Core.swift in Sources */,
 				D03B456019CBDE63009E1584 /* PeopleViewController.swift in Sources */,
