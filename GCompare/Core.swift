@@ -12,16 +12,17 @@ let SharedCore = Core()
 
 public class Core: NSObject {
     
-    class var Shared: Core {
-    return SharedCore
-    }
-    
     public var client: OCTClient!
     public var user: OCTExtendedUser?
     public var organizations: NSArray?
     public var starredRepositories: NSArray?
     public var selectedOrganization: OCTOrganization?
-    public var teams: NSArray?
+    public var teams: NSArray? {
+        didSet {
+            println(self.teams)
+        }
+    }
+    public var people: NSArray?
     
     func signIn(handler: ((AnyObject?) -> Void)?) {
         let accounts = SSKeychain.accountsForService(SERVICE_NAME)

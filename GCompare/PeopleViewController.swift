@@ -18,17 +18,16 @@ class PeopleViewController: UIViewController, UITableViewDataSource, UITableView
         // Do any additional setup after loading the view.
         tableView.registerNib(UINib(nibName: "PeopleCell", bundle: nil), forCellReuseIdentifier: "PeopleCell")
         
-        if (Core.Shared.selectedOrganization != nil && Core.Shared.teams == nil) {
+        if (SharedCore.selectedOrganization != nil && SharedCore.teams == nil) {
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
-                Core.Shared.client.fetchTeamsForOrganization(Core.Shared.selectedOrganization).collect().subscribeNext({ (x: AnyObject!) -> Void in
+                SharedCore.client.fetchTeamsForOrganization(SharedCore.selectedOrganization).collect().subscribeNext({ (x: AnyObject!) -> Void in
                     let teams = x as NSArray
-                    Core.Shared.teams = teams
+                    SharedCore.teams = teams
                     }, error: { (error: NSError!) -> Void in
                 })
                 return
             })
-        } else if (Core.Shared.teams != nil) {
-            
+        } else if (SharedCore.teams != nil) {
         }
     }
 
