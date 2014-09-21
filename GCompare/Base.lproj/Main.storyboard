@@ -252,7 +252,7 @@
         <!--Teams-->
         <scene sceneID="z6a-Ky-1sR">
             <objects>
-                <viewController id="fMd-yN-2ce" sceneMemberID="viewController">
+                <viewController id="fMd-yN-2ce" customClass="TeamsViewController" customModule="GCompare" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cep-vZ-1Kt"/>
                         <viewControllerLayoutGuide type="bottom" id="zfs-by-5oA"/>
@@ -260,9 +260,28 @@
                     <view key="view" contentMode="scaleToFill" id="sl4-TC-w73">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="WlZ-lO-alZ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="fMd-yN-2ce" id="IJR-wW-KLM"/>
+                                    <outlet property="delegate" destination="fMd-yN-2ce" id="97G-Ej-ZtH"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WlZ-lO-alZ" secondAttribute="trailing" id="6S4-bc-GH0"/>
+                            <constraint firstItem="WlZ-lO-alZ" firstAttribute="leading" secondItem="sl4-TC-w73" secondAttribute="leading" id="AB8-Y4-zYB"/>
+                            <constraint firstItem="WlZ-lO-alZ" firstAttribute="top" secondItem="cep-vZ-1Kt" secondAttribute="bottom" id="NXZ-7s-dtN"/>
+                            <constraint firstAttribute="bottom" secondItem="WlZ-lO-alZ" secondAttribute="bottom" id="oFL-nj-4Y0"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Teams" id="qbj-mn-v1F"/>
+                    <connections>
+                        <outlet property="tableView" destination="WlZ-lO-alZ" id="IEJ-ty-fJW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h6U-aA-VIt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

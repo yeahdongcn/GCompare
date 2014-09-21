@@ -21,6 +21,7 @@ public class Core: NSObject {
     public var organizations: NSArray?
     public var starredRepositories: NSArray?
     public var selectedOrganization: OCTOrganization?
+    public var teams: NSArray?
     
     func signIn(handler: ((AnyObject?) -> Void)?) {
         let accounts = SSKeychain.accountsForService(SERVICE_NAME)
